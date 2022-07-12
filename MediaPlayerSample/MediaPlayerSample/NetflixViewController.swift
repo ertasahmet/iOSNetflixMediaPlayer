@@ -128,13 +128,14 @@ extension NetflixViewController {
     }
     
     private func handlePlayerView() {
-        view.backgroundColor = .black
+        view.backgroundColor = .blue
         view.addSubview(playerView)
         
         playerView.snp.makeConstraints { make in
-            make.width.equalTo(view.frame.width)
-            make.height.equalTo(view.frame.height)
-            make.center.equalTo(view.center)
+            make.width.equalTo(view.snp.width)
+            make.height.equalTo(view.snp.height)
+            make.centerX.equalTo(view.snp.centerX)
+            make.centerY.equalTo(view.snp.centerY)
         }
         
         view.sendSubviewToBack(playerView)
@@ -148,7 +149,8 @@ extension NetflixViewController {
         playPauseButton.snp.makeConstraints { make in
             make.height.equalTo(80)
             make.width.equalTo(80)
-            make.center.equalTo(view.center)
+            make.centerX.equalTo(view.snp.centerX)
+            make.centerY.equalTo(view.snp.centerY)
         }
         
     }
@@ -161,7 +163,7 @@ extension NetflixViewController {
         forwardButton.snp.makeConstraints { make in
             make.height.equalTo(80)
             make.width.equalTo(80)
-            make.centerY.equalTo(view.center.y)
+            make.centerY.equalTo(view.snp.centerY)
             make.centerX.equalTo(playPauseButton).offset(200)
         }
         
@@ -175,7 +177,7 @@ extension NetflixViewController {
         backwardButton.snp.makeConstraints { make in
             make.height.equalTo(80)
             make.width.equalTo(80)
-            make.centerY.equalTo(view.center.y)
+            make.centerY.equalTo(view.snp.centerY)
             make.centerX.equalTo(playPauseButton).offset(-200)
         }
         

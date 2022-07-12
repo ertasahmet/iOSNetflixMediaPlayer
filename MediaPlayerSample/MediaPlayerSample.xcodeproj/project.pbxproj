@@ -50,7 +50,6 @@
 				E111A5AC0B5FBE28922FA0D0 /* Pods-MediaPlayerSample.debug.xcconfig */,
 				6B95C7191ACEEBBD7087F813 /* Pods-MediaPlayerSample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
