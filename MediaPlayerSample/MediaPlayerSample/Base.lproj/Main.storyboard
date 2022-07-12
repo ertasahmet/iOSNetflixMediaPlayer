@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FJw-d9-8B1">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MediaPlayerSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbg-Cv-009">
+                                <rect key="frame" x="44" y="20" width="808" height="200"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="wBB-fg-vAj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dbg-Cv-009" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TnH-tg-AL0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dbg-Cv-009" secondAttribute="trailing" id="jUV-al-mwp"/>
+                            <constraint firstItem="dbg-Cv-009" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="xu3-aM-U6D"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="videoView" destination="dbg-Cv-009" id="aT2-46-o4J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="30" y="78"/>
+        </scene>
+        <!--Netflix View Controller-->
+        <scene sceneID="5ou-hj-m5E">
+            <objects>
+                <viewController id="FJw-d9-8B1" customClass="NetflixViewController" customModule="MediaPlayerSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PUR-T0-Bvt">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="oI8-Kh-SEX">
+                                <rect key="frame" x="52" y="348" width="735" height="31"/>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                                <color key="thumbTintColor" systemColor="systemPinkColor"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="FJw-d9-8B1" eventType="valueChanged" id="5ba-56-ECU"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHb-Zk-0Ge">
+                                <rect key="frame" x="795" y="352" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UH1-g7-hxd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UH1-g7-hxd" firstAttribute="bottom" secondItem="oI8-Kh-SEX" secondAttribute="bottom" constant="15" id="FRe-Fx-2is"/>
+                            <constraint firstItem="UH1-g7-hxd" firstAttribute="bottom" secondItem="RHb-Zk-0Ge" secondAttribute="bottom" constant="20" id="LPn-GU-2FB"/>
+                            <constraint firstAttribute="trailing" secondItem="RHb-Zk-0Ge" secondAttribute="trailing" constant="30" id="agG-T7-pjq"/>
+                            <constraint firstItem="RHb-Zk-0Ge" firstAttribute="leading" secondItem="oI8-Kh-SEX" secondAttribute="trailing" constant="10" id="gPT-MJ-Y0a"/>
+                            <constraint firstItem="oI8-Kh-SEX" firstAttribute="leading" secondItem="UH1-g7-hxd" secondAttribute="leading" constant="10" id="ygq-fd-HjK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="remainingTimeLbl" destination="RHb-Zk-0Ge" id="PHU-Ic-L7A"/>
+                        <outlet property="slider" destination="oI8-Kh-SEX" id="NiI-na-Xn9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Df5-cz-BBv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="829" y="78"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
