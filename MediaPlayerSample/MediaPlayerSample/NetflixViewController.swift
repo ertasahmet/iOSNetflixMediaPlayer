@@ -128,7 +128,7 @@ extension NetflixViewController {
     }
     
     private func handlePlayerView() {
-        view.backgroundColor = .blue
+        view.backgroundColor = .black
         view.addSubview(playerView)
         
         playerView.snp.makeConstraints { make in
